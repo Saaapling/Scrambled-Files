@@ -1,0 +1,24 @@
+﻿Debugging Quiz/Exercise 
+ 
+Description 
+ 
+On Wed Sep 20 we will have a lab quiz where a TA will sit with you and verify you know how to use the Eclipse debugger.  We will provide at least two programs and you need to identify the problems associated with them.   You will have about 5-6 minutes to figure out the problems. The good faith attempt applies to this quiz (you may not ignore this quiz).  
+ 
+Using a debugger, you should be able to: 
+ 
+1. How to set line numbers by right-clicking on the left column of the code page. 
+2. Setting breakpoints. 
+3. Stepping into and stepping over a function. 
+4. Displaying variable values. 
+5. Continue program execution after a breakpoint. 
+6. Printing the stack of the current method. 
+7. Switching stacks. 
+ 
+You should not be concerned about failing the class due to this quiz.  Notice we will have several TAs that day in each lab session. 
+ 
+Resources 
+ 
+http://www.vogella.com/tutorials/EclipseDebugging/article.html 
+ 
+ 
+ 

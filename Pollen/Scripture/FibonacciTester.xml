@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<FibonacciTester>
+	<cases>
+		<case id="0">
+			<data name="pairs" type="*int">
+				<e>1</e>
+				<e>1</e>
+				<e>2</e>
+				<e>3</e>
+				<e>5</e>
+				<e>8</e>
+				<e>13</e>
+				<e>21</e>
+			</data>
+		</case>
+    <case id="1">
+      <data name="pairs" type="*int">
+				<e>1</e>
+				<e>3</e>
+      </data>
+    </case>
+    <case id="2">
+      <data name="pairs" type="*int">
+				<e>2</e>
+				<e>4</e>
+				<e>6</e>
+				<e>10</e>
+				<e>16</e>
+				<e>26</e>
+      </data>
+    </case>
+    <case id="3">
+      <data name="pairs" type="*int">
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+      </data>
+    </case>
+    <case id="4">
+      <data name="pairs" type="*int">
+				<e>0</e>
+				<e>1</e>
+				<e>1</e>
+				<e>2</e>
+				<e>3</e>
+				<e>5</e>
+      </data>
+    </case>
+    <case id="4">
+      <data name="pairs" type="*int">
+				<e>3</e>
+				<e>4</e>
+				<e>7</e>
+				<e>11</e>
+				<e>18/e>
+				<e>29</e>
+      </data>
+    </case>
+	</cases>
+</FibonacciTester>

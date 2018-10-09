@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<LinkedListTester>
+	<cases>
+		<case id="0">
+			<data name="list" type="*string">
+				<e>AA</e>
+				<e>AB</e>
+				<e>AC</e>
+				<e>AD</e>
+				<e>AE</e>
+			</data>
+      <data name="val" type="string">
+				<e>AZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>1</e>
+      </data>
+    </case>
+    <case id="1">
+      <data name="list" type="*string">
+				<e>BA</e>
+				<e>BB</e>
+				<e>BC</e>
+      </data>
+      <data name="val" type="string">
+				<e>BZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>0</e>
+      </data>
+    </case>
+    <case id="2">
+      <data name="list" type="*string">
+				<e>CA</e>
+				<e>CB</e>
+				<e>CC</e>
+				<e>CD</e>
+      </data>
+      <data name="val" type="string">
+				<e>CZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>4</e>
+      </data>
+		</case>
+    <case id="3">
+      <data name="list" type="*string">
+
+      </data>
+      <data name="val" type="string">
+				<e>DZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>0</e>
+      </data>
+    </case>
+    <case id="4">
+      <data name="list" type="*string">
+
+      </data>
+      <data name="val" type="string">
+				<e>EZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>1</e>
+      </data>
+    </case>
+    <case id="5">
+      <data name="list" type="*string">
+				<e>FA</e>
+				<e>FB</e>
+				<e>FC</e>
+				<e>FD</e>
+				<e>FE</e>
+				<e>FF</e>
+				<e>FG</e>
+				<e>FH</e>
+      </data>
+      <data name="val" type="string">
+				<e>FZ</e>
+      </data>
+      <data name="where" type="int">
+				<e>29</e>
+      </data>
+    </case>
+	</cases>
+</LinkedListTester>

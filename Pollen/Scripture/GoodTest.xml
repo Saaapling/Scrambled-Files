@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<GoodTest>
+	<cases>
+		<case id="0">
+			<data name="NAME" type="string">
+        jimmy
+        bobby
+        sarah
+        crabby
+        Samuel Pettipaw
+        CNYFDBN  TRNID
+        awepjg aewjp
+			</data>
+		</case>
+	</cases>
+</GoodTest>

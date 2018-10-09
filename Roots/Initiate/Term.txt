@@ -1,0 +1,10 @@
+﻿Useful Computer Science Terms:
+Interface: 
+Implement: Takes an Interface/Master class and ‘implements’ its methods/information into a subclass
+API – Application Programming Interface
+Diamond Syntax: Specifying the parameter only once and leaving a ‘<>’ diamond for the compiler to figure out for itself.
+Collection: Object that groups multiple elements into one unit [ArrayList]
+	Consists of Interfaces, Implementations
+Autoboxing / Unboxing – Automatics ‘boxes’ primitives into objects when necessary (ArrayLists)
+Enumerated Types: Useful when there are a small limited group of possibilities. They then can be individually enumerated out and used
+Annotation – Provides data about a program with no direct effect on the operation of the code they annotate (Place them before your declarations)

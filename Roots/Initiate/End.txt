@@ -1,0 +1,141 @@
+﻿Final Exam Practice:
+
+Problem 1 (Software Development & Testing)
+1. Complexity of Projects
+2. The process for planning, creating, testing, and deploying software
+3. Specification
+
+4. 
+a. True
+b. False
+c. False
+
+5. 
+a. False
+b. False
+c. True
+
+6.
+a. True
+b. False
+c. False
+d. True
+
+7. 
+a. Conference, Team, Player, Scholarship Player
+b. Teams play each other, Teams transfer players
+c. Conferences have Teams, Teams have Players
+d. Conferences use teams, Teams use players
+e. Scholarship Players are Players
+
+
+Problem 2 (Trees)
+1. 
+a. For each node, smaller values are placed to the left of the node, larger values to the right
+b. log(n)
+c. log(n)
+d. n
+e. If the tree is degenerate, as in the tree resembles more of a linked list then a tree, then a search will essentially run through the entire list to find a value
+
+2. 
+6582103
+b.
+638210
+3.
+a. A tree traversal is a traversal of each node and leaf on a tree in a pre-defined order 
+b. Breadth first traverses all of the nodes that are ‘n’ away from the starting node before traversing all of the nodes ‘n+1’ away. Depth first follows a single path to the end before backtracking to follow the other discovered paths. 
+c. T
+d. F
+e. i) 1 5 2 2 4 3
+   ii) 2 2 5 3 4 1
+  iii) 1 5 4 2 2 3
+
+4. see eclipse
+
+Problem 3 (Heaps)
+1. 
+a. The binary tree that is completely filled except for the last row, which is filled from left to right. Each node has a value that is dependent on what type of heap it is in. 
+b. Heaps do not sort the entire tree, in order traversals do not generate a sorted list
+c. log n
+d. O(1)
+e. Parent(i) = (i-1)/2
+    Left Child (i) = 2*i + 1
+    Right Child (i) = 2*i + 2
+f. Retrieving the smallest/largest value has a constant complexity, and it doesn’t matter if the rest of the heap is sorted.
+
+2. (Done on paper)
+
+Problem 4 (Algorithmic Complexity)
+1. 
+a. Algorithmic complexity is a benchmark for how fast or slow a particular algorithm runs 
+b. Benchmarking gives more precise information for any given configuration, factoring in things like implementation, hardware, inputs, etc.
+c. Best case – fastest an algorithm can rune
+    Worst case – the most slow path an algorithm can take
+    Average case – how fast a particular algorithm will take on average, limiting the influence of outliers that give best/worst case scenarios
+d. Big-O notation measures intrinsic efficiency and tests how efficient a program is in relation to its input size, it serves as a the efficiency test for large inputs
+
+
+
+2. 
+a. nlog(n)
+b. (n-2)[(log(n)(5) + 1000n + n/25] = O(n^2)
+
+Problem 5 (Graphs)
+1. 
+a. Edges n directed graphs have directions
+b. A path goes from a to b, a cycle loops
+c. Store a matric of edge weights, or store nodes as objects with pointers to one another, the matrix requires more space
+
+2.
+a. A particular Node can point to more than just 2 Nodes, and a node can have multiple parents has well.
+b. BFS visits all neighbors of node first while DFS visits all nodes on path first and then back tracks.
+
+3. 
+a. A C F D E / A F C E D 
+b. A C E F D / A F D C E
+
+4.
+After A:
+NodeABCDECost017PredecessorN/AA A
+
+
+
+
+After C: 
+NodeABCDECost03149PredecessorN/ACACC
+Problem 6 (Java Language Features)
+1. 
+a. Inner classes are classes created inside of another class. Inner classes can directly access the fields of the class they are in (variables, methods), and vice versa.
+b. Nested classes are static inner classes. They can only access static fields of its outer class, and survives longer than the outer class object.
+c. Inner classes are useful to have as private helper classes and when they are tied/linked to an outer class and wouldn’t make sense without it.
+d. Anonymous inner classes should be used if there is only one instance of the variable that is needed
+e. There is only one instance of both the lambda expression and an anonymous inner class
+f. 
+return new TeamPlayer(){
+      …
+; 
+
+2. 
+a. T
+b. F (before constructor)
+c. F (package)
+d. F
+
+3.
+a. Generics can take any type, and using generic while programming allows for more flexibility: the same code can be used for different data types
+b. 
+4. 
+a. A lambda expression is a concise way to define an anonymous class instance
+b. Runnable lambda = () -> {for (int i = 0; i < 100, i ++) {System.out.println(i);}}
+c. It can only have 1 method
+
+5. 
+a. Exceptions are events outside the normal behavior of code
+b. Exceptions are used when something that shouldn’t happen occurs to stop a process that is running
+c. Everything that would otherwise result in a run-time error should throw an exception (dividing by 0, accessing an array element that does not exist, etc)
+d. Try attempts to execute the code within the block. If the code throws an exception, the catch statement ‘catches’ the exception and the try block terminates. Whatever is inside of the ctch block is now run. The finally block executes after the try-catch blocks are completed, regardless of whether an exception was caught or not. 
+e. Checked exceptions need to be ‘caught’ or declared by the program in order for the program to compile. Unchecked exceptions are more serious errors that a program should not have to handle that usually indicate logic errors
+f. 1. ABD, 2. ACD
+
+Problem 7 (Multithreading & Synchronization)
+

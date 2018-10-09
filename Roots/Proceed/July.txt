@@ -1,0 +1,156 @@
+﻿
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <math.h>
+#include <assert.h>
+#include <pthread.h>
+#include <limits.h>
+
+static unsigned long *ary;
+static unsigned long *baseprimes;
+static unsigned long primeNo = 2;
+
+static unsigned long first;
+static unsigned long last;
+static unsigned long arylen;
+static unsigned long curr[4] = { 3, 5, 7, 11 };
+
+static pthread_mutex_t mutex;
+
+void *siever(void *args) {
+	unsigned long current;
+	unsigned long j;
+	int aryNum;
+	int id = (int)args;
+	current = curr[id];
+
+	/* clear non-primes */
+	if (id == 0){
+	while (current <= sqrt(last)) {
+		/* What array index to start at? */
+		if (current >= first) {
+			j = (current * 3 - first) / 2;
+		}
+		else {
+			unsigned int diff;
+			if (first % current == 0) {
+				j = 0;
+			}
+			else {
+				diff = (first / current) + 1;
+				if (diff % 2 == 0) {
+					diff += 1;
+				}
+				diff = current * diff;
+				diff = diff - first;
+				j = diff / 2;
+			}
+		}
+
+		/* Clearing the Non-Primes */
+		for (; j < arylen; j += current) {
+			if (ary[j] != 0) {
+				pthread_mutex_lock(&mutex);
+				ary[j] = 0;
+				pthread_mutex_unlock(&mutex);
+			}
+		}
+		/* Choosing Next 'Current' */
+		if (first == 3) {
+			for (j = (current - first) / 2; j < arylen; j++) {
+				aryNum = ary[j];
+				if (aryNum != 0 /*&& aryNum != curr[0] && aryNum != curr[1] && aryNum != curr[2] && aryNum != curr[3]*/) {
+					current = ary;
+					curr[id] = current;
+					break;
+				}
+
+				if (last <= 11) {
+					current = last;
+				}
+			}
+		}
+		else {
+			/* Data Race Issue Here! But Why?*/
+			pthread_mutex_lock(&mutex);
+			if (baseprimes[primeNo - 1]) {
+				current = baseprimes[primeNo - 1];
+				primeNo += 1;
+				/*if (current == 0) {
+					printf("PrimeNo: %lu\n", primeNo);
+				}*/
+				printf("%lu, ", current);
+			}
+			else {
+				current = last;
+			}
+			pthread_mutex_unlock(&mutex);
+		}
+	}
+}
+	return NULL;
+}
+
+unsigned long *sieve_of_eratosthenes(unsigned long begin, unsigned long end) {
+	unsigned long i, j;
+	pthread_t threads[4];
+	pthread_mutex_init(&mutex, NULL);
+
+	if (begin > 3) {
+		baseprimes = sieve_of_eratosthenes(2, sqrt(end));
+		curr[0] = 3;
+		curr[1] = 5;
+		curr[2] = 7;
+		curr[3] = 11;
+	}
+
+	/* skip initial even or initial 1 */
+	while (begin == 1 || begin % 2 == 0)
+		begin += 1;
+
+	/* possible that begin==end==5; result array should be 5, 0 */
+	arylen = end - begin + 2;
+
+	ary = calloc(arylen, sizeof(unsigned long));
+	if (!ary)
+		exit(1);
+
+	/* setup the odds-only array. */
+	for (i = begin; i <= end; i += 2) {
+		ary[(i - begin) / 2] = i;
+	}
+	first = ary[0];
+	last = end;
+
+	for (i = 0; i < 4; i++) {
+		pthread_create(&threads[i], NULL, siever, (void *)i);
+	}
+
+	for (i = 0; i < 4; i++) {
+		pthread_join(threads[i], NULL);
+	}
+	/*if (first != 3) {
+		printf("\n\n\n");
+	}*/
+	/* compact or not?*/
+	j = 0;
+
+	for (i = 0; i < arylen && j < arylen; i++) {        /* i iterates over all, or until j hits the end. */
+		for (; j < arylen && ary[j] == 0; j++); /* j iterates up until end while not prime */
+		if (j < arylen) {       /* not done, found a prime to copy */
+			assert(ary[j] != 0);
+			assert(i <= j);
+			ary[i] = ary[j];
+		}
+		else {
+			break;              /* no more to compact */
+		}
+		j++;                    /* did this one, advance. or there's nothing at the end */
+	}
+	ary[i] = 0;                 /* ensure zero terminate ary */
+	ary = realloc(ary, (i + 1) * sizeof(unsigned long));        /* shrink for niceness. */
+	pthread_mutex_destroy(&mutex);
+	return ary;
+}
+

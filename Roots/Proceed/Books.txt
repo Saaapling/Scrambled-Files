@@ -1,0 +1,6 @@
+﻿Dynamic - instead of loading the actual code/library, just gives a link to the library when compile
+Retrieves the code from library at runtime
+no need to recompile when the library itself is changed
+
+static library – when compiles, puts all the code that it needs into the executable. No dependencies
+static libraries take up more space.

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PascalsTriangleTester>
+	<cases>
+		<case id="0">
+			<data name="pairs" type="*int">
+				<e>1</e>
+				<e>1</e>
+			</data>
+		</case>
+    <case id="1">
+      <data name="pairs" type="*int">
+				<e>1</e>
+				<e>2</e>
+				<e>1</e>
+      </data>
+    </case>
+    <case id="2">
+      <data name="pairs" type="*int">
+				<e>1</e>
+				<e>6</e>
+				<e>15</e>
+				<e>20</e>
+				<e>15</e>
+				<e>6</e>
+				<e>1</e>
+      </data>
+    </case>
+    <case id="3">
+      <data name="pairs" type="*int">
+				<e>1</e>
+				<e>3</e>
+				<e>3</e>
+				<e>1</e>
+      </data>
+    </case>
+	</cases>
+</PascalsTriangleTester>

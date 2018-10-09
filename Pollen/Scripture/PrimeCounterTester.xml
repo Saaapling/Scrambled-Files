@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<PrimeCounterTester>
+	<cases>
+		<case id="0">
+			<data name="num" type="int">
+				10033331
+			</data>
+      <data name="ans" type="int">
+        666654
+      </data>
+		</case>
+	</cases>
+</PrimeCounterTester>

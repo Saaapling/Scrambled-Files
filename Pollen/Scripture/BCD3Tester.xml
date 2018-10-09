@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<BCD3Tester>
+	<cases>
+		<case id="0">
+			<data name="tests" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+		<case id="1">
+			<data name="tests" type="*int">
+				<e>1</e>
+			</data>
+		</case>
+		<case id="2">
+			<data name="tests" type="*int">
+				<e>1</e>
+				<e>2</e>
+				<e>3</e>			</data>
+		</case>
+		<case id="3">
+			<data name="tests" type="*int">
+				<e>4</e>
+				<e>5</e>
+				<e>6</e>
+				<e>7</e>
+			</data>
+		</case>
+		<case id="4">
+			<data name="tests" type="*int">
+				<e>8</e>
+				<e>9</e>
+				<e>0</e>
+				<e>1</e>
+				<e>2</e>
+			</data>
+		</case>
+		<case id="5">
+			<data name="tests" type="*int">
+				<e>3</e>
+				<e>4</e>
+				<e>5</e>
+				<e>6</e>
+				<e>7</e>
+				<e>8</e>
+				<e>1</e>
+				<e>4</e>
+				<e>7</e>
+			</data>
+		</case>
+    <case id="6">
+      <data name="tests" type="*int">
+				<e>4</e>
+				<e>2</e>
+				<e>1</e>
+				<e>1</e>
+				<e>0</e>
+				<e>0</e>
+				<e>8</e>
+				<e>6</e>
+				<e>9</e>
+				<e>9</e>
+				<e>1</e>
+				<e>0</e>
+				<e>0</e>
+				<e>2</e>
+				<e>3</e>
+				<e>1</e>
+				<e>2</e>
+				<e>0</e>
+				<e>7</e>
+      </data>
+    </case>
+	</cases>
+</BCD3Tester>

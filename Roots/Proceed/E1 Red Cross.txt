@@ -1,0 +1,514 @@
+﻿Exam Fall 2014
+Problem 1
+1. c
+2. a, d (a, c)
+3. a. Valid
+    b. Invalid
+    c. Invalid (Use strcpy)
+    d. Valid
+    e. Valid
+    f. Invalid
+    g. Invalid (*p = &b1; should not have ‘&’, *p stores the POINTER of the right hand side)
+    h. Valid
+4. b
+5. a. Valid
+    b. Invalid
+    c. Valid
+6. a
+7. b
+8. b
+9. a, c
+10. b
+11. a
+Problem 2
+1. cp *.txt /usr/john/tmp
+2. int *(*fptr)(void *);
+3. a | b: ba
+   a ^ b: 38
+  a & b: 82
+ a >> 2: 22 
+
+
+4. 2
+    a.out
+    10
+    Yes
+5. 
+
+
+
+
+Problem 3
+int insert(const char *src, char replace_char, const char *replace_string, char result[]) {
+	int i;
+	int changed = 0;
+	char *p = result;
+	if (src == NULL || strlen(src) < 2) {
+		return -1;
+	}
+
+	for (i = 0; i < strlen(src); i++) {
+		if (src[i] == replace_char) {
+			changed += 1;
+			strcpy(p, replace_string);
+			p += strlen(replace_string);
+		}else{
+			*p = src[i];
+			p += 1;
+		}
+	}
+	*p = '\0';
+	return changed;
+} 
+Problem 4:
+int process_data(int use_std_input, Grades_entry grades[]) {
+	FILE *input = stdin;
+	char line[MAX_LINE_LEN + 1], dropped[2];
+	int i = 0;
+	int score1;
+	int score2;
+	float numeric_score;
+	if ((!use_std_input)){
+		input = fopen("data.txt", "r");
+		if (input == NULL) {
+			fprintf(stderr, "Opening file failed.\n");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	while (fgets(line, MAX_LINE_LEN + 1, input)) {
+		sscanf(line, "%s%s", grades[i].name, dropped);
+		if (strcmp(dropped, "X") == 0) {
+			score1 = score2 = numeric_score = 0;
+		}
+		else {
+			sscanf(line, "%s%d%d", grades[i].name, &score1, &score2);
+		}
+		grades[i].scores[0] = score1;
+		grades[i].scores[1] = score2;
+		grades[i].numeric_grade = (score1 + score2) / 2.0;
+		i++;
+	}
+	return i;
+}
+Exam Spring 15
+Problem 1
+1. mv ~/*.tex /tmp
+2. float **(*fptr(char *));
+3. a | b: ab
+    a ^ b: 29
+    a & b: 82
+    a >> 3: 11
+4. a, c
+5. none
+6. b
+7. b
+8. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Problem 2: (ALMOST!!!)
+int find_instances(const char *haystack, const char *needle, const char *array_of_ptrs[100]){
+	int i;
+	char *pos = haystack;
+	int instance = 0;
+	int len = strlen(haystack);
+	int nlen = strlen(needle);
+
+	for (i = 0; i < len; i++){
+		if (haystack[i] == needle[0]){
+			if (strncmp(pos, needle, nlen) == 0){
+				array_of_prts[instance] = pos;
+				instance += 1;
+				pos += nlen;
+				i += nlen;
+			}
+		}
+		pos += 1;
+	}
+	return instance;
+}
+Problem 4:
+int main(int argc, char *argv[]) {
+	File *input = stdin;
+	if (argc == 2){
+		input = fopen(argv[1], “r”);
+		if (input == NULL){
+			fprintf(stderr, "Invalid Input.\n");
+			exit(EXIT_FAILURE);
+		}
+	 etc.
+Exam Spring 16
+Problem 1
+1. cp -r ./project1 ~/all_projects
+2. gcc -o my.exe my.c
+3. b
+4. c
+5. a, b, c (no f)
+6. a, b, c
+7. b
+8. a, c
+9. 16
+10. V1: 16, 4
+      V2: 8, 4
+11. Garbage value assigned to y and printed
+12. a. Processing 1
+      b. a.out 7
+13. does not compile, type of void pointer vp must be specified (casted) in printf
+14. does not compile, cannot assign arrays using ‘=’ sign
+15. char *strcpy(char *dest, const char *src){
+	int i;
+	while (src[i]){
+		dest[i] = src[i];
+		i += 1;
+	}
+	dest [i] = ‘\0’;
+
+	return dest;
+}
+
+
+
+Problem 2 ??? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Problem 3:
+char *reverse(const char *source, char separator, char result[]) {
+	int i = 0;
+	char *pos = result;
+
+	if (source == NULL || separator == '\0' || strlen(source) == 0) {
+		return NULL;
+	}
+
+	strcpy(pos, source);
+	pos += strlen(source);
+	*pos = separator;
+	pos += 1;
+
+	pos += strlen(source);
+	*pos = '\0';
+	pos--;
+	while (source[i]) {
+		*pos = source[i];
+		i++;
+		pos--;
+	}
+
+	return pos - strlen(source);
+}
+
+
+
+
+
+
+Exam Spring 17
+Problem 1:
+1. cp ~/data/*.c .
+2. gcc -o test test.c
+3. cp -r /tmp/project2 ~/216
+4. b
+5. a, c
+6. c (Booleans can be casted into 1 and 0)
+7. a. Valid
+    b. Invalid (a+3 is a garbage value??)
+    c. Invalid
+8. b
+9. The output will be whatever garbage value is associated with x(and y)
+10. 1
+11. a, b
+12. a (e)
+13. int read_values(int *v1, int *v2){
+	if (scanf(“%d-%d”, v1,  v2){
+		return 0;
+	}
+	return 1;
+}
+14. a. V1:12.7V2:CEND
+      b. V1:13.2V2:BEND
+      c. V1:5.0V2:FEND
+
+
+
+
+
+
+15. int main(int argv, char argv[]){
+	if (atoi(argv[1]) % 2 == 0){
+		printf(“Even\n”);
+	}else{
+		printf(“Odd\n”);
+	}
+	return 0;
+}
+
+16. const char *find_nth_instance(const char *str, char target, int n){
+	int i;
+	int count;
+	char *pos = str;
+	count = 0;
+	i = 0;
+	while (str[i]){
+		if (str[i] == target){
+			count += 1;
+			if (count == n){
+				return pos;
+			}
+		}
+		i++;
+		pos++;
+	}
+	return NULL;
+}
+
+
+
+
+Problem 2:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Problem 3:
+int init_restaurant(Restaurant *r_ptr, const char *name, int num_tables){
+	int i;
+	if (name == NULL || strlen(name) == 0 || r_ptr == NULL || num_tables > MAX_TABLES){
+		return 0;
+	}
+	strcpy(r_ptr->name, name);
+	r_ptr->num_tables = num_tables;
+	r_ptr->available_tables = num_tables;
+	for (i = 0; i < num_tables; i++){
+		r_ptr->tables[i].available = 1;
+	}
+	return 1;
+}
+
+int assign_table(Restaurant *r_ptr, int guests){
+	int i;
+	if (r_ptr == NULL || guests < 1 || r_ptr->available_tables == 0){
+		return -1;
+	}
+	for (i = 0; i < r_ptr->num_tables; i++){
+		if (r_ptr->tables[i].available){
+			r_ptr->tables[i].available = 0;
+			r_ptr->tables[i].guests = guests;
+			r_ptr->tables[i].bill = 0;
+			r_ptr->available_tables -= 1;
+			return i;
+		}
+	}
+	return -1;
+}
+
+
+
+int get_occupied_tables(Restaurant *r_ptr, Table answer[], int *found){
+	int i;
+	int count = 0;
+	*found = 0;
+	if (r_ptr == NULL || answer == NULL || found == NULL){
+		return 0;
+	}
+	for (i = 0; i < r_ptr->num_tables; i++){
+		if (r_ptr->tables[i].available == 0){
+			answer[count] = r_ptr->tables[i];
+			count += 1;
+		}
+	}
+	*found = count;
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exam Summer 2016
+1. mv /temp/project1/*.pdf ~/my_copies
+2. the file code.c will be compiled by gcc and will be overwritten into the executable file for the program
+3. c
+4. a
+5. compiles, prints out 6
+6. does not compile, analyze in f1.c is undefined, and analyze in f2.c can only be accessed by f2
+7. b, d
+8. compiles, a garbage value is output
+9. d
+10. a, c
+11. a. Invalid
+     b. Valid
+     c. Invalid
+     d. Invalid
+     e. Invalid
+12. format_string = “%d:%2d %cm”;
+13. int main(int argc, char argv[]){
+	if (argc == 1){
+		printf(“Provide value”);
+	}else{
+		if (strlen(argv[1]) < 12){
+			 printf(“Invalid Password”);
+		}
+	}	
+	return 0;
+}
+
+
+
+
+
+
+14. int same_position_cnt(const char *s1, const char *s2){
+	int i;
+	int count = 0;
+	if (s1 == NULL || s2 == NULL){ 
+		return -1; 
+	}
+	for (i = 0; s1[i] && s2[i]; i++){
+		if (s1[i] == s2[i]){
+			count += 1;
+		}
+	}
+	return count;
+}
+
+Problem 2:
+
+
+Problem 3:
+void init_store(Store *store){
+	if (store != NULL){
+		store->app_cnt = 0;
+		store->total_downloads = 0;
+	}
+}
+
+int add_app(Store *store, const char *app_name, Developer *developer){
+	int i;
+	if (store == NULL || strlen(app_name) > MAX_STR_SIZE || app_cnt >= MAX_APPS){
+		return 0;
+	}
+	i = store->app_cnt;
+	store->app[i].downloads = 0;
+	store->app[i].developer = developer;
+	strcpy(store->app[i].name, app_name);
+	store->app_cnt += 1;
+	return 1;
+}
+
+void find_apps(Store *store, int minimum_downloads, App *apps[], int *found){
+	int i;
+	if (store){
+		found = 0;
+		for (i = 0; i < store->app_cnt; i++){
+			if (store->app[i].downloads >= minimum_downloads){
+				apps[found] = store->app[i];
+				found += 1;
+			}
+		}
+	}
+}
+
+Exam Summer 17
+1. mv ~/data/&.txt .
+2. mv myCode.c old.c
+3. cp -r /tmp/exercise2 ~/
+4. c
+5. a
+6. d
+7. 8 300
+8. a, c
+9. Does not compile, mnt is not in the scope of f()
+10. Either returns a garbage value or seg faults
+11. a, c
+12. 1010
+13. b
+14. c
+15. b
+16. SKIP
+17. i. Invalid
+     ii. Invalid
+    iii. Invalid
+    iv. Valid (type is an array, not a pointer)
+     v. Valid
+    vi. Invalid
+   vii. Invalid (can’t set an array to NULL)
+  viii. Valid
+    ix. Invalid
+b) BLA-50-A1
+
+Problem 2: 
+
+
+
+
+
+Problem 3:
+void int_to_str(unsigned char value, char result[]) {
+	unsigned int temp, i, idx = 7;
+	for (i = 1; i <= 8; i++) {
+		temp = value & 1;
+		result[idx--] = temp == 1? '1' : '0';
+		value >>= 1;
+	}
+	result[8] = '\0';
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<NecklaceTester>
+	<cases>
+		<case id="0">
+			<data name="pairs" type="*int">
+				<e>3</e>
+				<e>4</e>
+				<e>12</e>
+			</data>
+		</case>
+    <case id="1">
+      <data name="pairs" type="*int">
+				<e>5</e>
+				<e>5</e>
+				<e>3</e>
+      </data>
+    </case>
+    <case id="2">
+      <data name="pairs" type="*int">
+				<e>6</e>
+				<e>4</e>
+				<e>20</e>
+      </data>
+    </case>
+    <case id="3">
+      <data name="pairs" type="*int">
+				<e>8</e>
+				<e>1</e>
+				<e>60</e>
+      </data>
+    </case>
+	</cases>
+</NecklaceTester>

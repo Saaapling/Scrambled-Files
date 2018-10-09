@@ -1,0 +1,138 @@
+
+  3
+  b
+  λ \
+
+  (\x.xx) 6
+  66
+  (\x.3+x) 8
+  11
+
+  (\f.(\x.f (f x))) sqrt 64
+  (\x.sqrt (sqrt x)) 64
+  sqrt (sqrt 64)
+  sqrt 8
+  2.82
+
+  let avg a b = div (a + b) 2
+
+  avg = (\a -> (\b -> div (a + b) 2))
+
+  a6 = avg 6
+     = (\a -> (\b -> div (a+b) 2)) 6
+     = (\b -> div (6+b) 2)
+
+  a6 10
+     = (\b -> div (6+b) 2) 10
+     = div (6+10) 2
+     = div 16 2
+     = 8
+
+map (^ 2) [1..100]
+map (\x -> x ^ 2) [1..100]
+== mod
+
+
+map reverse ["abc", "def"]
+map reverse [['a', 'b', 'c'], ['d', 'e', 'f']]
+[reverse ['a', 'b', 'c'], reverse ['d', 'e', 'f']]
+[['c', 'b', 'a'], ['f', 'e', 'd']]
+["cba", "fed"]
+
+reverse [1, 2, 3]
+[3, 2, 1]
+
+getURL request -> HTML
+respondToEvent whatHappenned -> action
+
+
+
+
+
+(abstract, concise)
+
+high-level   Haskell, Lisp
+             JS, Python, Ruby
+             Java, VM languages (C#)
+            -----
+             C++, D
+             C
+low-level    ASM (x86, x64)
+
+(concrete, verbose)
+
+math  f(x) = x^2
+
+HS    f x = x ^ 2
+
+Lisp  (defun f (x) (^ x 2))    I think?
+
+JS    function f(x) {
+        return x ^ 2;
+      }
+
+Ruby  def f(x)
+        x ^ 2
+      end
+
+Java  public static int f(int x) {
+        return x * x;
+      }
+
+C#    (identical)
+
+C++   public:
+      static int f(int x) {
+        return x * x;
+      }
+
+      you can get abstraction by using templates..
+      template <class T>
+      static T f(T x) {
+        return x * x;
+      }
+
+C     int f (int x) {
+        return x * x;
+      }
+
+ASM   f:
+      popl %ebx
+      popl %edx
+      mull %edx, %edx
+      movl %edx, %eax
+      pushl %ebx
+      ret
+
+
+      pushl x
+      pushl RETURN ADDRESS
+      call f
+      HERE
+
+eax  x^2
+ebx  RETURN ADDR
+ecx
+edx  x^2
+
+
+
+--------
+stack
+
+
+
+count "asd"
+count 'a':"sd"
+1 + count "sd"
+1 + count 's':"d"
+1 + 1 + count "d"
+1 + 1 + count 'd':[]
+1 + 1 + 1 + count []
+1 + 1 + 1 + 0
+3
+
+
+
+  1. RECURSION
+  2. CONCURRENCY

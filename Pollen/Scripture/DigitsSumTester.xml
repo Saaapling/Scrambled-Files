@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<DigitsSumTester>
+	<cases>
+		<case id="0">
+			<data name="pairs" type="*int">
+				<e>0</e>
+				<e>0</e>
+			</data>
+		</case>
+    <case id="1">
+      <data name="pairs" type="*int">
+				<e>3</e>
+				<e>3</e>
+      </data>
+    </case>
+    <case id="2">
+      <data name="pairs" type="*int">
+				<e>11</e>
+				<e>2</e>
+      </data>
+    </case>
+    <case id="3">
+      <data name="pairs" type="*int">
+				<e>188</e>
+				<e>17</e>
+      </data>
+    </case>
+    <case id="4">
+      <data name="pairs" type="*int">
+				<e>197265390</e>
+				<e>42</e>
+      </data>
+    </case>
+	</cases>
+</DigitsSumTester>

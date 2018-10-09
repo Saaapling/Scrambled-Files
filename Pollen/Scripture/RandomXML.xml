@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<RandomXML>
+	<bobby>
+		<case id="0">
+			<data name="NAME" type="string">
+			</data>
+		</case>
+	</bobby>
+</RandomXML>

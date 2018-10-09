@@ -1,0 +1,153 @@
+﻿CMSC 132 Quiz 4 Worksheet 
+ 
+The next quiz for the course will be on Wed, Oct 25. The following list provides additional information about the quiz: 
+ 
+• Do not post any solutions to this worksheet in Piazza.   
+• The quiz will be a written quiz (no computer). 
+• The quiz will be in lab session. 
+• Closed book, closed notes quiz. 
+• Answers must be neat and legible. 
+• Quiz instructions can be found at http://www.cs.umd.edu/~nelson/classes/utilities/examRules.html  	Make sure you know your section number and your TA’s name. 
+• You must take your quiz in your assigned lab/discussion section and not show up to a random discussion section.  We will not grade quizzes taken in the incorrect section. 
+ 
+The following exercises cover the material to be included in this quiz. Solutions to these exercises will not be provided, but you are welcome to discuss your solutions with the TAs or instructors during office hours.  It is recommended that you try these exercises on paper first (without using a computer).   
+ 
+ 
+Exercises 
+ 
+1. Give the asymptotic bound of the following functions: 
+ 
+a. n3 + log(n)  	 	 	 	 		f(n) = O(n^3) 
+ 
+b. 2n4 + 500n + n2 	 	 	 	 	f(n) = O(n^0.4) 
+ 
+c. nlog(n) + nk  	 	 	 	 	f(n) = O(n^k) 
+ 
+d. nn + 200n + n2 	 	 	 	 	f(n) = O(n^n) 
+ 
+e. 2n4 + 500n + log(n)  	 	 	 	f(n) = O(n^4) 
+ 
+f. 1000 	 	 	 	 	 	f(n) = O(0) 
+ 
+2. List the following big-O expressions in order of asymptotic complexity (lowest complexity first). 
+ 
+	O(nlog(n)) 2	 	    O(log(n)) 1	 	   O(n2)  3	 	O(n3) 4
+ 
+3. What is the Java Hash Code Contract? 
+If the equals method is overridden for a class and two objects are said to be equal, then the two objects’ hash codes also must be equal. However, the inverse and converse do not have to be true. (If a = b, then hash(a) = hash(b), but hash (a) = hash (b) does not imply a =b, nor does a != b imply that hash(a) != hash(b).
+
+4. Implement the methods below based on the following Java class definitions.  For recursive methods you may only add one auxiliary function, and you may not add any instance nor static variables. 
+ 
+public class LinkedList<T extends Comparable<T>> { 
+ private class Node {     private T data; 
+    private Node next; 
+  	 
+    private Node(T data) { 
+       this.data = data; 
+	  	next = null; 
+    } 
+ } 
+  private Node head; 
+  
+ public LinkedList() { 
+    head = null; 
+ } 
+} 
+ 
+ 
+ 
+a. Define a constructor that takes a TreeSet<T> as a parameter and initializes a linked list with the elements in the set.  The new list must be sorted in increasing lexicographic order. 
+
+public LinkedList(TreeSet<T> set){
+		for (int I = 0; I < set.size(); i++){
+			Node newNode = new Node(set.toArray()[i]);
+			newNode.next = head;
+			head = newNode;
+		}
+	
+}
+
+
+b. Define a RECURSIVE method named size that returns the number of elements in the list.  The prototype for this method is:   
+
+public int size() {
+		return sizeAux(head, 1);
+}
+
+public int sizeAux(Node headAux, int current){
+		if (headAux != null){
+			sizeAux(headAux.next, current + 1);		
+		}
+		return current;
+}
+ 
+
+c. Define a RECURSIVE method named inRange that returns a HashSet<T> with the elements in the list that in the specified range.   The range includes the lower and upper bound.  The prototype for this method is:
+ 
+ public HashSet<T> inRange(T lowerBound, T upperBound){
+	return inRangeAux(lowerBound, upperBound, head, new HashSet<T>());
+}
+
+public void inRangeAux(T lowerBound, T upperbound, Node headAux, HashSet<T> set){
+	
+	if (headAux.data.compareTo(lowerBound) >= 0 && headAux.data.compareTo(upperBound) <= 0){		set.add(headAux.data);
+	}
+
+	if (headAux.next != null){
+		inRangeAux(lowerBound, upperBound, headAux.next, set);
+	}
+}
+ 
+ 
+
+d. Define a RECURSIVE method named remove that removes all instances in the list that are equal to the target parameter.  The prototype for this method is: 
+ 
+	public void remove(T target) {
+		head = removeAux(target, head);
+	}
+	
+	private Node removeAux(T targetData, Node headAux) {
+		if (headAux != null) {
+			if (headAux.data.compareTo(targetData) == 0) {
+				return removeAux(targetData, headAux.next);
+			}
+			headAux.next = removeAux(targetData, headAux.next);
+		}
+		return headAux;
+	}
+  
+e. Define a RECURSIVE method named positionOfElementInList that returns a TreeMap<T, Integer> that maps each element of the list to its position in the list. The prototype for this method is: 
+ 
+	public TreeMap<T, Integer> positionOfElementInList() {
+		TreeMap<T, Integer> tree = new TreeMap<T, Integer>();
+		positionOfElementInListAux(head, tree, 1);
+		return tree;
+	}
+	
+	private void positionOfElementInListAux(Node headAux, TreeMap<T, Integer> tree, int position) {
+		if (headAux != null) {
+			tree.put(headAux.data, position);
+			positionOfElementInListAux(headAux.next, tree, position + 1);
+		}
+	}
+  
+f. Define an equals method for the class.  Two lists are equal if the data elements in the two lists are the same (and appear in the same position).  Make sure your class satisfies the Java Hash Code Contract. 
+ 
+	public boolean equals(LinkedList a) {
+		if (a.hashCode() != hashCode())
+			return false;
+		if (size() != a.size())
+			return false;
+		return equalsAux(head, a.head);
+	}
+	
+	private boolean equalsAux(Node headAux, Node headAux2) {
+		if (headAux != null) {
+			if (headAux.data != headAux.data) {
+				return false;
+			}else {
+				return equalsAux(headAux.next, headAux2.next);
+			}
+		}
+		return true;
+	}

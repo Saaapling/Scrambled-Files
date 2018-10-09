@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<BCD5Tester>
+	<cases>
+		<case id="0">
+			<data name="mult1" type="*int">
+				<e>0</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>0</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+
+		<case id="1">
+			<data name="mult1" type="*int">
+				<e>0</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>1</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+
+		<case id="2">
+			<data name="mult1" type="*int">
+				<e>0</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>2</e>
+				<e>5</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+
+		<case id="3">
+			<data name="mult1" type="*int">
+				<e>1</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>0</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+
+		<case id="4">
+			<data name="mult1" type="*int">
+				<e>7</e>
+				<e>5</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>0</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+			</data>
+		</case>
+
+		<case id="5">
+			<data name="mult1" type="*int">
+				<e>1</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>2</e>
+				<e>8</e>
+				<e>3</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>2</e>
+				<e>8</e>
+				<e>3</e>
+			</data>
+		</case>
+
+		<case id="6">
+			<data name="mult1" type="*int">
+				<e>6</e>
+				<e>4</e>
+				<e>9</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>1</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>6</e>
+				<e>4</e>
+				<e>9</e>
+			</data>
+		</case>
+
+		<case id="7">
+			<data name="mult1" type="*int">
+				<e>0</e>
+				<e>1</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>6</e>
+				<e>4</e>
+				<e>5</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+				<e>6</e>
+				<e>4</e>
+				<e>5</e>
+			</data>
+		</case>
+
+		<case id="8">
+			<data name="mult1" type="*int">
+				<e>2</e>
+				<e>4</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>6</e>
+				<e>3</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>2</e>
+				<e>1</e>
+				<e>5</e>
+				<e>1</e>
+			</data>
+		</case>
+
+		<case id="9">
+			<data name="mult1" type="*int">
+				<e>6</e>
+				<e>4</e>
+				<e>2</e>
+				<e>1</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>7</e>
+				<e>4</e>
+				<e>3</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>2</e>
+				<e>6</e>
+				<e>3</e>
+				<e>2</e>
+				<e>3</e>
+				<e>4</e>
+			</data>
+		</case>
+
+		<case id="10">
+			<data name="mult1" type="*int">
+				<e>3</e>
+				<e>2</e>
+				<e>8</e>
+				<e>9</e>
+				<e>2</e>
+				<e>5</e>
+				<e>6</e>
+				<e>8</e>
+				<e>9</e>
+				<e>2</e>
+				<e>1</e>
+				<e>4</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>6</e>
+				<e>0</e>
+				<e>1</e>
+				<e>4</e>
+				<e>7</e>
+				<e>5</e>
+				<e>2</e>
+				<e>9</e>
+				<e>7</e>
+				<e>1</e>
+				<e>6</e>
+				<e>0</e>
+				<e>5</e>
+				<e>4</e>
+				<e>3</e>
+				<e>4</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>8</e>
+				<e>3</e>
+				<e>2</e>
+				<e>3</e>
+				<e>6</e>
+				<e>5</e>
+				<e>6</e>
+				<e>0</e>
+				<e>5</e>
+				<e>7</e>
+				<e>6</e>
+				<e>8</e>
+				<e>3</e>
+				<e>8</e>
+				<e>6</e>
+				<e>1</e>
+				<e>8</e>
+				<e>5</e>
+				<e>1</e>
+				<e>9</e>
+				<e>9</e>
+				<e>1</e>
+				<e>5</e>
+				<e>4</e>
+				<e>4</e>
+				<e>9</e>
+				<e>7</e>
+				<e>1</e>
+			</data>
+		</case>
+
+		<case id="11">
+			<data name="mult1" type="*int">
+				<e>0</e>
+				<e>3</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>1</e>
+				<e>0</e>
+				<e>5</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+				<e>3</e>
+				<e>0</e>
+				<e>5</e>
+				<e>1</e>
+			</data>
+		</case>
+
+		<case id="12">
+			<data name="mult1" type="*int">
+				<e>0</e>
+				<e>2</e>
+				<e>4</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>3</e>
+				<e>3</e>
+				<e>3</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+				<e>6</e>
+				<e>8</e>
+				<e>9</e>
+				<e>3</e>
+				<e>1</e>
+			</data>
+		</case>
+
+		<case id="13">
+			<data name="mult1" type="*int">
+				<e>7</e>
+				<e>1</e>
+				<e>5</e>
+				<e>2</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>0</e>
+				<e>5</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+				<e>5</e>
+				<e>8</e>
+				<e>5</e>
+				<e>2</e>
+				<e>1</e>
+			</data>
+		</case>
+
+		<case id="14">
+			<data name="mult1" type="*int">
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>5</e>
+			</data>
+			<data name="mult2" type="*int">
+				<e>0</e>
+				<e>0</e>
+				<e>3</e>
+			</data>
+			<data name="ans" type="*int">
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>0</e>
+				<e>5</e>
+				<e>1</e>
+			</data>
+		</case>
+</BCD5Tester>
